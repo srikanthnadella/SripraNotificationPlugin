@@ -182,4 +182,32 @@ public class CloverPlugin extends CordovaPlugin implements MerchantConnector.OnM
         merchantID = result.getId();
         deviceID = result.getDeviceId();
     }
+    
+    /**
+     * Stop notification receiver.
+     */
+    public void onDestroy() {
+        removeNotificationListener();
+    }
+    
+    /**
+     * Stop notification receiver.
+     */
+    public void onReset() {
+        removeNotificationListener();
+    }
+    
+    /**
+     * Stop the notification receiver and set it to null.
+     */
+    private void removeNotificationListener() {
+        if (this.receiver != null) {
+            try {
+                this.cordova.getActivity().unregisterReceiver(this.receiver);
+                this.receiver = null;
+            } catch (Exception e) {
+                Log.e(TAG, "Error unregistering notification receiver: " + e.getMessage(), e);
+            }
+        }
+    }
 }
