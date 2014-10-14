@@ -7,7 +7,8 @@
     <description>PhoneGap Clover Plugin</description>
     <license>MIT</license>
     <keywords>phonegap,clover</keywords>
-	<!--<asset src="www/cloverplugin.js" target="js/cloverplugin.js" />-->
+	<asset src="www/index.js" target="js/index.js" />
+	<asset src="www/index.html" target="index.html" />
 
     <js-module src="www/cloverplugin.js" name="CloverPlugin">
         <clobbers target="window.cloverplugin" />
