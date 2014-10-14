@@ -1,0 +1,13 @@
+
+=======================
+1. Add the following lines to AndroidManifest.xml in platforms/android folder:
+
+<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+<uses-permission android:name="android.permission.USE_CREDENTIALS" />
+
+2. Add clover SDK files to platforms/android/src/com folder
+3. Add the calc.jar file to platforms/android/libs folder
+4. Add the index.html and index.js files to the www and www/js folders respectively
+
+
+
