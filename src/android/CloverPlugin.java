@@ -42,8 +42,8 @@ import android.app.PendingIntent;
 import android.support.v4.app.NotificationCompat.Builder;
 import android.support.v4.app.TaskStackBuilder;
 import android.support.v4.app.NotificationCompat;
-import com.sripra.termtegrity.R;
-import com.sripra.termtegrity.sripraNotification;
+//import com.termtegrity.spotskim.cloverplugin.R;
+//import com.termtegrity.spotskim.cloverplugin.SpotskimNotification;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -150,35 +150,36 @@ public class CloverPlugin extends CordovaPlugin implements MerchantConnector.OnM
 
 NotificationCompat.Builder mBuilder =
         new NotificationCompat.Builder(cordova.getActivity()).setAutoCancel(true)
-        .setSmallIcon(R.drawable.icon)
+        .setSmallIcon(cordova.getActivity().getApplicationInfo().icon)
         .setContentTitle("Spotskim Notification")
         .setContentText("A notification has been received from the Spotskim server").setTicker("Spotskim notification");
         
         // PackageManager pm = cordova.getActivity().getPackageManager();
-// 		Intent resultIntent = pm.getLaunchIntentForPackage(cordova.getActivity().getApplicationContext().getPackageName());    		
+		// Intent resultIntent = pm.getLaunchIntentForPackage(cordova.getActivity().getApplicationContext().getPackageName());    		
 		
-		
+		String packageName = cordova.getActivity().getPackageName();
+		Intent resultIntent = cordova.getActivity().getPackageManager().getLaunchIntentForPackage(packageName);
 		
 // Creates an explicit intent for an Activity in your app
-Intent resultIntent = new Intent(cordova.getActivity(), sripraNotification.class);
-resultIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-resultIntent.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
+		//Intent resultIntent = new Intent(cordova.getActivity(), SpotskimNotification.class);
+		resultIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		resultIntent.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
 // The stack builder object will contain an artificial back stack for the
 // started Activity.
 // This ensures that navigating backward from the Activity leads out of
 // your application to the Home screen.
-TaskStackBuilder stackBuilder = TaskStackBuilder.create(cordova.getActivity());
+		//TaskStackBuilder stackBuilder = TaskStackBuilder.create(cordova.getActivity());
 // Adds the back stack for the Intent (but not the Intent itself)
-stackBuilder.addParentStack(sripraNotification.class);
+		//stackBuilder.addParentStack(SpotskimNotification.class);
 // Adds the Intent that starts the Activity to the top of the stack
-stackBuilder.addNextIntent(resultIntent);
-PendingIntent resultPendingIntent =
+		//stackBuilder.addNextIntent(resultIntent);
+		PendingIntent resultPendingIntent =
         PendingIntent.getActivity(cordova.getActivity(), 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);//stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
-mBuilder.setContentIntent(resultPendingIntent);
-NotificationManager mNotificationManager =
-    (NotificationManager) cordova.getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+		mBuilder.setContentIntent(resultPendingIntent);
+		NotificationManager mNotificationManager =
+    	(NotificationManager) cordova.getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
 // mId allows you to update the notification later on.
-mNotificationManager.notify(1, mBuilder.build());
+		mNotificationManager.notify(1, mBuilder.build());
  }
  
     @Override
@@ -256,27 +257,6 @@ mNotificationManager.notify(1, mBuilder.build());
         }
         
     }
-    
-    //
-    //    private void startAccountChooser() {
-    //        Intent intent = AccountManager.newChooseAccountIntent(null, null, new String[]{CloverAccount.CLOVER_ACCOUNT_TYPE}, false, null, null, null, null);
-    //        startActivityForResult(intent, REQUEST_ACCOUNT);
-    //    }
-    //
-    //    @Override
-    //    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    //        if (requestCode == REQUEST_ACCOUNT) {
-    //            if (resultCode == RESULT_OK) {
-    //                String name = data.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
-    //                String type = data.getStringExtra(AccountManager.KEY_ACCOUNT_TYPE);
-    //                account = new Account(name, type);
-    //            } else {
-    //                if (account == null) {
-    //                    finish();
-    //                }
-    //            }
-    //        }
-    //    }
     
     
     private void connect() {
