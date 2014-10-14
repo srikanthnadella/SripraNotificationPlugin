@@ -162,7 +162,7 @@ NotificationCompat.Builder mBuilder =
 // Creates an explicit intent for an Activity in your app
 Intent resultIntent = new Intent(cordova.getActivity(), sripraNotification.class);
 resultIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
+resultIntent.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
 // The stack builder object will contain an artificial back stack for the
 // started Activity.
 // This ensures that navigating backward from the Activity leads out of
