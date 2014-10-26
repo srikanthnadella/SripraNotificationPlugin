@@ -69,8 +69,8 @@ public class CloverAuthPlugin extends CordovaPlugin{
     //private static final int REQUEST_ACCOUNT = 0;
     //private MerchantConnector merchantConnector;
     private Account account;
-    private String merchantID = null;
-    private String deviceID = null;
+    private String merchantID = "TEST";
+    private String deviceID = "TEST1";
     
      private void sendNotification(Intent notificationIntent){
         if (this.notificationCallbackContext != null) {
