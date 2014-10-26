@@ -62,7 +62,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CloverAuthPlugin extends CordovaPlugin{
-    public static final String ACTION_GET_MERCHANT = "getMerchant";
+    public static final String ACTION_GET_MERCHANT = "getMerchant1";
     private static final String TAG = "CloverPlugin";
       private CallbackContext notificationCallbackContext = null;
     BroadcastReceiver receiver;
