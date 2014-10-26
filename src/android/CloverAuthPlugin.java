@@ -3,6 +3,12 @@ package com.termtegrity.spotskim.cloverplugin;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
+import org.json.JSONObject;
+import org.json.JSONArray;
+import org.json.JSONException;
+import android.content.pm.PackageManager;
+
+
 import android.accounts.Account;
 import android.app.Activity;
 import android.os.AsyncTask;
