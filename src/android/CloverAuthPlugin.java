@@ -69,8 +69,8 @@ public class CloverAuthPlugin extends CordovaPlugin{
     //private static final int REQUEST_ACCOUNT = 0;
     //private MerchantConnector merchantConnector;
     private Account account;
-    private String merchantID;
-    private String deviceID;
+    private String merchantID = null;
+    private String deviceID = null;
     
      private void sendNotification(Intent notificationIntent){
         if (this.notificationCallbackContext != null) {
@@ -162,7 +162,7 @@ public class CloverAuthPlugin extends CordovaPlugin{
         }
         //getMerchant();
         queryWebService();
-        if(merchant != null){
+        if(merchantID != null && deviceID != null){
 		JSONObject obj = new JSONObject();
         try {
             obj.put("MerchantID", merchantID);
