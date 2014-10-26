@@ -65,7 +65,6 @@ var app = {
 //                 element.value = "Level: " + message.level + " isPlugged: " + message.isPlugged;
                 }
                 
-                 }; //
                 var error = function(message) { alert("Oopsie! " + message); };
                 cloverplugin.getMerchant(success, error);
         }
