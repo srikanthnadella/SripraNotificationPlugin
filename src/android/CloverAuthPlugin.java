@@ -161,7 +161,7 @@ public class CloverAuthPlugin extends CordovaPlugin{
             return false;
         }
         //getMerchant();
-        queryWebService();
+        //queryWebService();
         JSONObject obj = new JSONObject();
         //if(merchantID != null && deviceID != null){
 		
