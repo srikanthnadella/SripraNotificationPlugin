@@ -134,6 +134,7 @@ public class CloverAuthPlugin extends CordovaPlugin{
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
     	callbackContext.error("Invalid action");
     	return false;
+    	/*
         try {
             if (ACTION_GET_MERCHANT.equals(action)) {
             
@@ -192,6 +193,7 @@ public class CloverAuthPlugin extends CordovaPlugin{
             callbackContext.error("Exception: " + e.getMessage());
             return false;
         }
+        */
     }
     
     
