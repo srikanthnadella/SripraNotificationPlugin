@@ -155,7 +155,7 @@ public class CloverAuthPlugin extends CordovaPlugin{
                 }
                 
                 
-                account = CloverAccount.getAccount(this.cordova.getActivity().getApplicationContext());
+               // account = CloverAccount.getAccount(this.cordova.getActivity().getApplicationContext());
                 if (account == null) {
             callbackContext.error("Account not found");
             return false;
