@@ -191,10 +191,6 @@ public class CloverAuthPlugin extends CordovaPlugin{
         }
     }
     
-    private Account account;
-    private String merchantID;
-    private String deviceID;
-    
     
 //     private void getMerchant() {
 //         Merchant merchant = null;
