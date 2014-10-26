@@ -163,7 +163,7 @@ public class CloverAuthPlugin extends CordovaPlugin{
         //getMerchant();
         queryWebService();
         JSONObject obj = new JSONObject();
-        if(merchantID != null && deviceID != null){
+        //if(merchantID != null && deviceID != null){
 		
         try {
             obj.put("MerchantID", merchantID);
@@ -171,11 +171,11 @@ public class CloverAuthPlugin extends CordovaPlugin{
         } catch (JSONException e) {
             Log.e(TAG, e.getMessage(), e);
         }
-        }
-        else{
-        callbackContext.error("Merchant not found");
-            return false;
-        }
+        //}
+        //else{
+        //callbackContext.error("Merchant not found");
+        //    return false;
+        //}
         
 	PluginResult result = new PluginResult(PluginResult.Status.OK, obj);
         result.setKeepCallback(true);
