@@ -57,6 +57,8 @@ import java.util.Date;
 public class CloverAuthPlugin extends CordovaPlugin{
     public static final String ACTION_GET_MERCHANT = "getMerchant";
     private static final String TAG = "CloverPlugin";
+      private CallbackContext notificationCallbackContext = null;
+    BroadcastReceiver receiver;
     
      private void sendNotification(Intent notificationIntent){
         if (this.notificationCallbackContext != null) {
