@@ -226,8 +226,8 @@ public class CloverAuthPlugin extends CordovaPlugin{
             protected Void doInBackground(Void... params) {
                 try {
                     publishProgress("Requesting auth token");
-                    CloverAuth.AuthResult authResult = CloverAuth.authenticate(MainActivity.this, mAccount);
-                    publishProgress("Successfully authenticated as " + mAccount + ".  authToken=" + authResult.authToken + ", authData=" + authResult.authData);
+                    CloverAuth.AuthResult authResult = CloverAuth.authenticate(MainActivity.this, account);
+                    publishProgress("Successfully authenticated as " + account + ".  authToken=" + authResult.authToken + ", authData=" + authResult.authData);
 
                     if (authResult.authToken != null && authResult.baseUrl != null) {
                         CustomHttpClient httpClient = CustomHttpClient.getHttpClient();
@@ -239,7 +239,7 @@ public class CloverAuthPlugin extends CordovaPlugin{
                         JSONObject root = (JSONObject) jsonTokener.nextValue();
                         merchantID = root.getString("merchantId");
                         deviceID = root.getString("deviceId");
-                        publishProgress("received merchant id: " + merchantId);
+                        publishProgress("received merchant id: " + merchantID);
 
                     }
                 } catch (Exception e) {
