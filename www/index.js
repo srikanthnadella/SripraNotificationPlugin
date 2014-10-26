@@ -57,18 +57,14 @@ var app = {
                 alert("MerchantID: " + merchantID + "\nDeviceID: " + deviceID);
                 }
                 else{
-<<<<<<< HEAD
                 alert("Event: " + message.level + " Payload: " + message.isPlugged);
                 }
-=======
                 //alert("test");
                 alert("Level: " + message.level + " isPlugged: " + message.isPlugged);
                 // var element = document.getElementById('notification');
 //                 element.value = "Level: " + message.level + " isPlugged: " + message.isPlugged;
                 }
                 
-                
->>>>>>> FETCH_HEAD
                  }; //
                 var error = function(message) { alert("Oopsie! " + message); };
                 cloverplugin.getMerchant(success, error);
