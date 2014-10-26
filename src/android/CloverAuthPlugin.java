@@ -1,5 +1,8 @@
 package com.termtegrity.spotskim.cloverplugin;
 
+import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.PluginResult;
 import android.accounts.Account;
 import android.app.Activity;
 import android.os.AsyncTask;
