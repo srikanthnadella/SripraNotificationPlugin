@@ -3,7 +3,7 @@ var cloverplugin = {
         cordova.exec(
             successCallback, // success callback function
             errorCallback, // error callback function
-            'CloverPlugin', // mapped to our native Java class called "CalendarPlugin"
+            'CloverAuthPlugin', // mapped to our native Java class called "CalendarPlugin"
             'getMerchant', // with this action name
             []
         );
